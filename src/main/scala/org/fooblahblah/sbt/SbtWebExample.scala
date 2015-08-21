@@ -40,7 +40,7 @@ object SbtWebExample extends AutoPlugin {
         shellFile := getClass.getClassLoader.getResource("stub.js"),
 
         taskMessage in Assets := "Fake tool compiling",
-        taskMessage in TestAssets := "Fake tool; test compiling"
+        taskMessage in TestAssets := "Fake tool test compiling"
       )
   ) ++ SbtJsTask.addJsSourceFileTasks(example) ++ Seq(
     example in Assets := (example in Assets).dependsOn(webModules in Assets).value,
